@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vitaly — Privacy Policy</title>
+<style>
+  :root {
+    --accent: #8B5CF6;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --bg: #FFFFFF;
+    --card: #F5F7FA;
+    --border: #E5E7EB;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #F2F3F7;
+      --muted: #9BA1AC;
+      --bg: #0E1116;
+      --card: #1A1D25;
+      --border: #2A2D35;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    margin: 0;
+    padding: 40px 20px 80px;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 32px; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h1 .accent { color: var(--accent); }
+  h2 {
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 17px; margin: 24px 0 8px; }
+  p, ul, ol { margin: 12px 0; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { font-weight: 600; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .tldr {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin: 20px 0 32px;
+  }
+  .tldr ul { margin: 8px 0 0; padding-left: 20px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { font-weight: 600; background: var(--card); }
+  code {
+    font: 13px/1.4 "SF Mono", Menlo, Consolas, monospace;
+    background: var(--card);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 32px 0; }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<h1><span class="accent">Vitaly</span> — Privacy Policy</h1>
+<p class="meta">Last updated: 22 July 2026</p>
+
+<p>Vitaly is a personal health dashboard for iOS. This policy explains what data the app collects, where it lives, who else sees it, and the controls you have.</p>
+
+<p>We wrote it to be readable, not defensive. If anything is unclear, email <strong><a href="mailto:sindgi.anuj@gmail.com">sindgi.anuj@gmail.com</a></strong> and we will fix it.</p>
+
+<div class="tldr">
+<strong>The short version</strong>
+<ul>
+  <li><strong>Most of your data stays on your phone.</strong> Journal, medications, water, habit logs, muscle-group tags, and score history never leave your device.</li>
+  <li><strong>Some data lives on our server so it can be synced and analysed.</strong> Your Swiggy identity and order history, uploaded blood reports, and the extracted test results are stored in our Postgres database on Railway.</li>
+  <li><strong>We do not sell your data, run ads, or use third-party analytics or tracking SDKs.</strong></li>
+  <li><strong>You can delete your account and everything the server holds at any time</strong> from Settings → Delete Account &amp; All Data.</li>
+</ul>
+</div>
+
+<h2>What Vitaly collects, and where it lives</h2>
+
+<h3>1. Stays on your device only</h3>
+<p>The following are stored locally on your iPhone in Vitaly's private storage and are <strong>never sent to our server or any third party</strong>:</p>
+<ul>
+  <li>Daily check-ins (mood, energy, journal answers)</li>
+  <li>Medications you add and the days you mark them as taken</li>
+  <li>Water intake logs and daily targets</li>
+  <li>Habit logs (cigarettes, alcoholic drinks)</li>
+  <li>Muscle-group tags you apply to workouts</li>
+  <li>Digital-detox app selections and completed sessions</li>
+  <li>Daily overall-score snapshots (for the trend sparkline)</li>
+  <li>Cached copies of server data so tabs work offline</li>
+</ul>
+<p>If you delete the app from your phone, this data is deleted along with it.</p>
+
+<h3>2. Read live from Apple Health</h3>
+<p>Vitaly reads the following from Apple Health each time you open the app and processes them on-device:</p>
+<ul>
+  <li>Sleep sessions and stages</li>
+  <li>Resting heart rate</li>
+  <li>VO₂ max</li>
+  <li>Recorded workouts (type, duration, calories)</li>
+</ul>
+<p>We do not copy this data to our server. Apple Health remains the authoritative store; you can revoke Vitaly's Health access at any time in <strong>iOS Settings → Privacy &amp; Security → Health → Vitaly</strong>.</p>
+
+<h3>3. Stored on our server</h3>
+<p>The following are sent to and stored in Vitaly's backend (Postgres database hosted on Railway):</p>
+<ul>
+  <li><strong>Your Swiggy account details</strong> — user ID, mobile number, and name from the Swiggy OAuth login; the access token used to fetch your order history</li>
+  <li><strong>Your Swiggy orders</strong> — item names, quantities, prices, order timestamps, restaurant or Instamart source, and computed health/nutrition scores</li>
+  <li><strong>Blood reports you upload</strong> — the original PDF plus the extracted test results (test name, value, unit, reference range, category)</li>
+  <li><strong>A per-user identifier</strong> (UUID) that ties the above together</li>
+</ul>
+<p>We keep this data so the app can sync across sessions, compute long-term trends, and generate insights.</p>
+
+<h3>4. Sent to OpenAI when a feature calls for it</h3>
+<p>When you upload a blood report, or when the AI Coach generates recommendations, Vitaly sends the relevant data to OpenAI's Chat Completions API:</p>
+<ul>
+  <li><strong>Blood report parsing</strong> — the raw text extracted from your uploaded PDF</li>
+  <li><strong>AI Coach</strong> — a compact snapshot of your abnormal biomarkers, aggregate order stats (30-day averages, not individual items), sleep and exercise totals, habit counts, and active medications</li>
+</ul>
+<p>OpenAI processes this to return structured data and returns it to us. Per <a href="https://openai.com/policies/api-data-usage-policies">OpenAI's API terms</a>, API inputs are not used to train their models and are retained by OpenAI for up to 30 days for abuse monitoring before deletion.</p>
+<p>We do not send OpenAI your name, Swiggy identity, or any direct identifier — the request is anonymous from OpenAI's perspective.</p>
+
+<h2>What we do <em>not</em> collect</h2>
+<ul>
+  <li><strong>No advertising identifiers</strong>, no IDFA, no fingerprinting</li>
+  <li><strong>No third-party analytics SDKs</strong> (no Firebase, Mixpanel, Amplitude, Segment, etc.)</li>
+  <li><strong>No crash-reporting SDKs</strong> beyond Apple's own opt-in reporting</li>
+  <li><strong>No location</strong> beyond what's implicit in Swiggy order delivery addresses (we do not read your phone's GPS)</li>
+  <li><strong>No contacts, photos, microphone, or camera</strong> access</li>
+</ul>
+<p>The app does not include social sharing, and does not upload anything to Vitaly's server unless it is listed in section 3 above.</p>
+
+<h2>Third parties who process your data</h2>
+<table>
+  <tr><th>Service</th><th>What we send them</th><th>Why</th></tr>
+  <tr><td><strong>Swiggy</strong> (<a href="https://www.swiggy.com/privacy-policy">privacy</a>)</td><td>OAuth login; the access token they issued</td><td>To fetch your order history on your behalf</td></tr>
+  <tr><td><strong>OpenAI</strong> (<a href="https://openai.com/policies/api-data-usage-policies">API data policy</a>)</td><td>Blood report text; anonymised health snapshot</td><td>To parse reports and generate insights</td></tr>
+  <tr><td><strong>Railway</strong> (<a href="https://railway.app/legal/privacy">privacy</a>)</td><td>Everything in section 3 (as our infrastructure host)</td><td>To run the backend and database</td></tr>
+  <tr><td><strong>Apple</strong> (<a href="https://www.apple.com/legal/privacy/">privacy</a>)</td><td>Nothing from us — Apple Health data stays on-device</td><td>HealthKit, push notifications, and TestFlight distribution</td></tr>
+</table>
+<p>We do not have any other data-sharing arrangements. We do not sell your data to anyone.</p>
+
+<h2>Your rights and how to exercise them</h2>
+
+<p><strong>Delete your account and all server-side data.</strong><br>
+Settings → Delete Account &amp; All Data. This immediately removes your Swiggy tokens, orders, blood reports, and extracted results from our database. It cannot be undone.</p>
+
+<p><strong>Delete on-device data.</strong><br>
+Delete the Vitaly app from your phone. All local data (journal, meds, water, habits, cached copies) is removed with it.</p>
+
+<p><strong>Revoke Apple Health access.</strong><br>
+iOS Settings → Privacy &amp; Security → Health → Vitaly. This immediately stops Vitaly from reading any Health data.</p>
+
+<p><strong>Disconnect Swiggy without deleting the account.</strong><br>
+Settings → Sign out. Your data remains on our server (in case you want to sign back in), but no further sync happens. Use Delete Account if you also want the historical data gone.</p>
+
+<p><strong>Access a copy of your data.</strong><br>
+Email us at <a href="mailto:sindgi.anuj@gmail.com">sindgi.anuj@gmail.com</a> from the address associated with your account and we will send you a JSON export within 30 days.</p>
+
+<p><strong>Correct your data.</strong><br>
+Blood report extractions can occasionally misread values. If you spot an error, delete and re-upload the report; if the issue persists, email us.</p>
+
+<h2>Data security</h2>
+<ul>
+  <li>All app-to-server traffic uses HTTPS (TLS 1.2+).</li>
+  <li>Passwords are not applicable — you sign in with Swiggy's OAuth flow; we never see or store your Swiggy password.</li>
+  <li>Access to the production database is restricted to the developer.</li>
+  <li>We do not encrypt your data at rest beyond the standard disk encryption provided by Railway's infrastructure.</li>
+</ul>
+<p>Vitaly is currently a small independent project. If you are handling particularly sensitive data (for example, unusual medical conditions you would not want in any third-party system), please weigh that against the security posture described here.</p>
+
+<h2>Data retention</h2>
+<ul>
+  <li><strong>Server data</strong> (section 3) is retained until you delete your account, at which point it is removed within 24 hours from our primary database. Encrypted database backups are rotated within 30 days.</li>
+  <li><strong>OpenAI</strong> retains API inputs for up to 30 days for abuse monitoring, then deletes them.</li>
+  <li><strong>On-device data</strong> is retained until you delete the app.</li>
+</ul>
+<p>If you stop using Vitaly without deleting your account, your data remains on our server indefinitely so you can pick up where you left off. You can force deletion at any time from the app or by email.</p>
+
+<h2>Children</h2>
+<p>Vitaly is not intended for users under 18. We do not knowingly collect data from anyone under 18. If you believe a child has provided data to Vitaly, email <a href="mailto:sindgi.anuj@gmail.com">sindgi.anuj@gmail.com</a> and we will delete it.</p>
+
+<h2>Where your data is processed</h2>
+<p>Vitaly's backend and database are hosted on Railway. Railway operates worldwide; your data may be processed in the region Railway assigns your project (typically the US or the EU). OpenAI processes API requests in the United States.</p>
+<p>If you are in the European Economic Area, the United Kingdom, or another region with data-transfer restrictions, using Vitaly involves your data being transferred to and processed in those regions.</p>
+
+<h2>Medical disclaimer</h2>
+<p>Vitaly is a personal tracking tool, not a medical device or a substitute for professional medical advice. The health score, insights, and food recommendations are informational and generated automatically. Always consult a qualified doctor for medical decisions, especially about abnormal blood test results or changes to medication.</p>
+
+<h2>Changes to this policy</h2>
+<p>We may update this policy as Vitaly evolves. Material changes will be shown in the app before they take effect. The "Last updated" date at the top of this page always reflects the current version.</p>
+
+<footer>
+  <p><strong>Contact:</strong> <a href="mailto:sindgi.anuj@gmail.com">sindgi.anuj@gmail.com</a></p>
+  <p>Vitaly is developed by Anuj Sindgi.</p>
+</footer>
+
+</main>
+</body>
+</html>
